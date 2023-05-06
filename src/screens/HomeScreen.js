@@ -4,8 +4,10 @@ import Layout from '../Layout';
 import { useNavigation } from '@react-navigation/native';
 
 
+
 const HomeScreen = () => {
     const navigation = useNavigation();
+
 
     function goProfileScreen() {
         navigation.navigate('Profile');
@@ -23,6 +25,11 @@ const HomeScreen = () => {
                 <Button
                     title="Login"
                     onPress={() => navigation.navigate('Login')}
+                />
+
+                <Button
+                    title="Go to Map"
+                    onPress={() => navigation.navigate('Map')}
                 />
 
             </View>

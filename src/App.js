@@ -5,13 +5,30 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import WalkthroughScreen from "./screens/WalkthroughScreen";
+import MapScreen from "./screens/MapScreen";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
+
 
 const App = () => {
     return (
         <NavigationContainer>
+            {/*<Tab.Navigator initialRouteName="WalkthroughScreen">*/}
+            {/*    <Tab.Screen name="Login" component={LoginScreen} />*/}
+            {/*    <Tab.Screen name="Profile" component={ProfileScreen} />*/}
+            {/*</Tab.Navigator>*/}
             <Stack.Navigator initialRouteName="WalkthroughScreen" screenOptions={{ headerShown: true }}>
+                <Stack.Screen
+                    options={{
+                        headerShown: false,
+                        headerStyle: {
+                            backgroundColor: '#000'
+                        }}}
+                    name="Map" component={MapScreen}/>
                 <Stack.Screen
                     options={{
                         headerShown: false,
@@ -41,6 +58,8 @@ const App = () => {
                     name="Login" component={LoginScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
+
+
     );
 };
 

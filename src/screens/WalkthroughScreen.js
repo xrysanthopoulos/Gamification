@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity, Button} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity, Button, ImageBackground} from 'react-native';
 import LoginScreen from "./LoginScreen";
 import { useNavigation } from '@react-navigation/native';
 
 const walkthroughData = [
     {
-        title: 'Welcome to My App',
-        description: 'This app helps you do awesome things',
+        title: 'Discover and Support Local Businesses with CityTrail',
+        description: 'This is a great way to explore your local community and businesses while also earning rewards! ',
         image: require('../assets/images/empire_state_building.png'),
     },
     {
-        title: 'Discover New Features',
-        description: 'Explore new features that will make your life easier',
-        image: require('../assets/images/robot-balloon.png'),
+        title: 'Easy to Use and Navigate',
+        description: 'Our app is designed to be user-friendly and easy to navigate.',
+        image: require('../assets/images/map.jpg'),
     },
     {
         title: 'Get Started',
@@ -38,7 +38,7 @@ const WalkthroughScreen = () => {
     const handleNext = () => {
         if (step === totalSteps) {
             // If the user finishes the walkthrough, navigate to the home screen
-            navigation.navigate('Home');
+            navigation.navigate('Login');
         } else {
             // Otherwise, go to the next step
             setStep(step + 1);
@@ -54,10 +54,6 @@ const WalkthroughScreen = () => {
             <Text style={styles.title}>{walkthroughData[step - 1].title}</Text>
             <Text style={styles.description}>{walkthroughData[step - 1].description}</Text>
             {/* The navigation buttons */}
-            <Button
-                title="Login"
-                onPress={() => navigation.navigate('Login')}
-            />
             <View style={styles.buttons}>
                 {/* The back button */}
                 {step > 1 && (
@@ -88,20 +84,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 20,
         marginBottom: 10,
+        textAlign: 'center'
     },
     description: {
         fontSize: 16,
         marginBottom: 20,
+        padding: 10
     },
     buttons: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 150
+        marginTop: 150,
+        padding: 20
     },
     button: {
-        backgroundColor: '#1e90ff',
+        backgroundColor: '#255ad2',
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 10,
         width: 100,
     },
     buttonText: {
