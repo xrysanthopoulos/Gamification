@@ -5,13 +5,16 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import WalkthroughScreen from "./screens/WalkthroughScreen";
+import { TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 
 const Stack = createStackNavigator();
 
 const App = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="WalkthroughScreen" screenOptions={{ headerShown: true }}>
+            <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: true }}>
                 <Stack.Screen
                     options={{
                         headerShown: false,
@@ -19,17 +22,38 @@ const App = () => {
                             backgroundColor: '#000'
                         }}}
                     name="WalkthroughScreen" component={WalkthroughScreen}/>
+
+                    <Stack.Screen
+                        name="Profile"
+                        component={ProfileScreen}
+                        options={{
+                            cardStyle: {
+                            backgroundColor: 'white'
+                            },
+                            headerStyle: {
+                            backgroundColor: '#30d2e7'
+                            },
+                            headerRight: () => (
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('MAPS_PAGE')}
+                                style={{
+                                    marginRight: 15
+                                  }}
+                                
+                            >
+                                <Ionicons name="map-outline" size={24} color="white" />
+                            </TouchableOpacity>
+                            )
+                        }}
+                    />
                 <Stack.Screen
                     options={{ title: 'Welcome',
                         headerStyle: {
                         backgroundColor: '#e7305b'
                     }}}
                     name="Home" component={HomeScreen}/>
-                <Stack.Screen
-                    options={{
-                    headerStyle: {
-                        backgroundColor: '#30d2e7'
-                    }}} name="Profile" component={ProfileScreen}/>
+
+                
                 <Stack.Screen
                     options={{
                         cardStyle: {

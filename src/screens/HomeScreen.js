@@ -9,6 +9,7 @@ const HomeScreen = () => {
 
     function goProfileScreen() {
         navigation.navigate('Profile');
+        
     }
 
     return (
@@ -16,7 +17,7 @@ const HomeScreen = () => {
             <View style={styles.container}>
                 <Text style={styles.text}>Welcome to my app!</Text>
                 <Button
-                    title="Go to Details"
+                    title="My Profile"
                     onPress={() => goProfileScreen()}
                 />
 
@@ -24,7 +25,7 @@ const HomeScreen = () => {
                     title="Login"
                     onPress={() => navigation.navigate('Login')}
                 />
-
+        
             </View>
         </Layout>
     );
@@ -36,6 +37,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    button: {
+        backgroundColor: '#e7305b',
+        padding: 16,
+        borderRadius: 8,
+      },
     text: {
         fontSize: 24,
         fontWeight: 'bold',
