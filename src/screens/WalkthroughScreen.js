@@ -7,7 +7,7 @@ const walkthroughData = [
     {
         title: 'Discover and Support Local Businesses with CityTrail',
         description: 'This is a great way to explore your local community and businesses while also earning rewards! ',
-        image: require('../assets/images/empire_state_building.png'),
+        image: require('../assets/images/step1.jpg'),
     },
     {
         title: 'Easy to Use and Navigate',
@@ -17,7 +17,7 @@ const walkthroughData = [
     {
         title: 'Get Started',
         description: 'Start using the app and enjoy the benefits',
-        image: require('../assets/images/van_gonh_painting.png'),
+        image: require('../assets/images/explore.jpg'),
     },
 ];
 
@@ -38,7 +38,7 @@ const WalkthroughScreen = () => {
     const handleNext = () => {
         if (step === totalSteps) {
             // If the user finishes the walkthrough, navigate to the home screen
-            navigation.navigate('Login');
+            navigation.navigate('Home');
         } else {
             // Otherwise, go to the next step
             setStep(step + 1);
@@ -47,7 +47,7 @@ const WalkthroughScreen = () => {
 
 
     return (
-        <View style={{flex: 1, justifyContent: 'center'}}>
+        <View style={{flex: 1, justifyContent: 'center', backgroundColor: '#fff'}}>
             {/* The current step's image */}
             <Image source={walkthroughData[step - 1].image} style={styles.image} />
             {/* The current step's title and description */}

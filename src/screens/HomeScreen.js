@@ -27,6 +27,10 @@ const HomeScreen = () => {
     navigation.navigate('Payment');
   }
 
+    function goMapScreen() {
+        navigation.navigate('Map');
+    }
+
   function goLeaderBoardScreen() {
     navigation.navigate('LeaderBoard');
   }
@@ -56,8 +60,8 @@ const HomeScreen = () => {
           <Tile onPress={goProfileScreen} text="My Profile" iconName="person-outline" />
           <Tile onPress={goPaymentScreen} text="Payment" iconName="card-outline" />
           <Tile onPress={goLeaderBoardScreen} text="Leaderboard" iconName="trophy-outline" />
-          <Tile onPress={goLeaderBoardScreen} text="Maps" iconName="map-outline" />
-          <Tile onPress={goLoginScree} text="Logout" iconName="log-in-outline" />
+          <Tile onPress={goMapScreen} text="Maps" iconName="map-outline" />
+          <Tile onPress={goLoginScreen} text="Logout" iconName="log-in-outline" />
         </View>
       </Layout>
   );
@@ -74,7 +78,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 16,
         backgroundColor: 'white',
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        paddingTop: 100,
       },
 
     tile: {

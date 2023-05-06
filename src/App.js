@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -16,6 +16,7 @@ const Stack = createStackNavigator();
 
 
 const App = () => {
+
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="WalkthroughScreen" screenOptions={{ headerShown: true }}>
@@ -34,55 +35,33 @@ const App = () => {
                         }}}
                     name="WalkthroughScreen" component={WalkthroughScreen}/>
 
-                    <Stack.Screen
-                        name="Profile"
-                        component={ProfileScreen}
-                        options={{
-                            cardStyle: {
+                <Stack.Screen
+                    name="Profile"
+                    component={ProfileScreen}
+                    options={{
+                        cardStyle: {
                             backgroundColor: 'white'
-                            },
-                            headerStyle: {
+                        },
+                        headerStyle: {
                             backgroundColor: '#30d2e7'
-                            },
-                            headerRight: () => (
+                        },
+                        headerRight: () => (
                             <TouchableOpacity
-                                onPress={() => navigation.navigate('MAPS_PAGE')}
+                                onPress={() => {navigation.navigate('Map')}}
                                 style={{
                                     marginRight: 15
-                                  }}
+                                }}
 
                             >
                                 <Ionicons name="map-outline" size={24} color="white" />
                             </TouchableOpacity>
-                            )
-                        }}
-                    />
+                        )
+                    }}
+                />
 
-                    <Stack.Screen
-                        name="Profile"
-                        component={ProfileScreen}
-                        options={{
-                            cardStyle: {
-                            backgroundColor: 'white'
-                            },
-                            headerStyle: {
-                            backgroundColor: '#30d2e7'
-                            },
-                            headerRight: () => (
-                            <TouchableOpacity
-                                onPress={() => navigation.navigate('MAPS_PAGE')}
-                                style={{
-                                    marginRight: 15
-                                  }}
-
-                            >
-                                <Ionicons name="map-outline" size={24} color="white" />
-                            </TouchableOpacity>
-                            )
-                        }}
-                    />
                 <Stack.Screen
                     options={{ title: 'Welcome',
+                        headerShown: false,
                         headerStyle: {
                         backgroundColor: '#30d2e7'
                     }}}
@@ -106,6 +85,16 @@ const App = () => {
                             backgroundColor: '#30d2e7'
                         }}}
                     name="Login" component={LoginScreen}/>
+
+                <Stack.Screen
+                    options={{
+                        cardStyle: {
+                            backgroundColor: 'white'
+                        },
+                        headerStyle: {
+                            backgroundColor: '#30d2e7'
+                        }}}
+                    name="Payment" component={PaymentScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
