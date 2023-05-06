@@ -9,6 +9,7 @@ const HomeScreen = () => {
 
     function goProfileScreen() {
         navigation.navigate('Profile');
+        
     }
 
     return (
@@ -23,6 +24,11 @@ const HomeScreen = () => {
                 <Button
                     title="Login"
                     onPress={() => navigation.navigate('Login')}
+                />
+
+                <Button
+                    title="Payment"
+                    onPress={() => navigation.navigate('Payment')}
                 />
 
                 <Button
