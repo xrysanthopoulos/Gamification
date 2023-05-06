@@ -51,7 +51,7 @@ const App = () => {
                 <Stack.Screen
                     options={{ title: 'Welcome',
                         headerStyle: {
-                        backgroundColor: '#e7305b'
+                        backgroundColor: '#30d2e7'
                     }}}
                     name="Home" component={HomeScreen}/>
 
