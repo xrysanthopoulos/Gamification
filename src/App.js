@@ -1,12 +1,13 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import WalkthroughScreen from "./screens/WalkthroughScreen";
-import { TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Leaderboard from './screens/LeadeBoardScreen';
 
 
 const Stack = createStackNavigator();
@@ -52,6 +53,13 @@ const App = () => {
                         backgroundColor: '#e7305b'
                     }}}
                     name="Home" component={HomeScreen}/>
+                <Stack.Screen
+                    options={{ title: 'Leader Board',
+                        headerStyle: {
+                        backgroundColor: '#30d2e7'
+                    }}}
+                    name="LeaderBoard" component={Leaderboard}/>
+
 
                 
                 <Stack.Screen

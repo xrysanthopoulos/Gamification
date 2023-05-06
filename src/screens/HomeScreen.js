@@ -25,6 +25,11 @@ const HomeScreen = () => {
                     title="Login"
                     onPress={() => navigation.navigate('Login')}
                 />
+
+                <Button
+                    title="LeadeBoard"
+                    onPress={() => navigation.navigate('LeaderBoard')}
+                />
         
             </View>
         </Layout>
