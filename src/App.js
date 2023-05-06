@@ -15,6 +15,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 const Tab = createBottomTabNavigator();
+import MapScreen from "./screens/MapScreen";
+import Leaderboard from "./screens/LeadeBoardScreen";
+import PaymentScreen from "./screens/PaymentScreen";
 
 const Stack = createStackNavigator();
 
