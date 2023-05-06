@@ -27,6 +27,11 @@ const HomeScreen = () => {
                 />
 
                 <Button
+                    title="Payment"
+                    onPress={() => navigation.navigate('Payment')}
+                />
+
+                <Button
                     title="LeadeBoard"
                     onPress={() => navigation.navigate('LeaderBoard')}
                 />

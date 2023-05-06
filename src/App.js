@@ -8,6 +8,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import WalkthroughScreen from "./screens/WalkthroughScreen";
 import Leaderboard from './screens/LeadeBoardScreen';
+import PaymentScreen from './screens/PaymentScreen'
 
 
 const Stack = createStackNavigator();
@@ -53,6 +54,7 @@ const App = () => {
                         backgroundColor: '#e7305b'
                     }}}
                     name="Home" component={HomeScreen}/>
+
                 <Stack.Screen
                     options={{ title: 'Leader Board',
                         headerStyle: {
@@ -71,6 +73,21 @@ const App = () => {
                             backgroundColor: '#30d2e7'
                         }}}
                     name="Login" component={LoginScreen}/>
+
+
+
+
+                    <Stack.Screen
+                        options={{
+                        cardStyle: {
+                            backgroundColor: 'white'
+                        },
+                        headerStyle: {
+                            backgroundColor: '#30d2e7'
+                        }}}
+                    name="Payment" component={PaymentScreen}/>
+
+
             </Stack.Navigator>
         </NavigationContainer>
     );
