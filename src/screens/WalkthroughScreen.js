@@ -1,0 +1,116 @@
+import React, { useState } from 'react';
+import {View, Text, Image, StyleSheet, TouchableOpacity, Button} from 'react-native';
+import LoginScreen from "./LoginScreen";
+import { useNavigation } from '@react-navigation/native';
+
+const walkthroughData = [
+    {
+        title: 'Welcome to My App',
+        description: 'This app helps you do awesome things',
+        image: require('../assets/images/empire_state_building.png'),
+    },
+    {
+        title: 'Discover New Features',
+        description: 'Explore new features that will make your life easier',
+        image: require('../assets/images/robot-balloon.png'),
+    },
+    {
+        title: 'Get Started',
+        description: 'Start using the app and enjoy the benefits',
+        image: require('../assets/images/van_gonh_painting.png'),
+    },
+];
+
+
+const WalkthroughScreen = () => {
+    const [step, setStep] = useState(1);
+    const totalSteps = 3;
+
+    const navigation = useNavigation();
+
+
+    // Your code for handling navigation between steps goes here
+
+    const handleBack = () => {
+        setStep(step - 1);
+    };
+
+    const handleNext = () => {
+        if (step === totalSteps) {
+            // If the user finishes the walkthrough, navigate to the home screen
+            navigation.navigate('Home');
+        } else {
+            // Otherwise, go to the next step
+            setStep(step + 1);
+        }
+    };
+
+
+    return (
+        <View style={{flex: 1, justifyContent: 'center'}}>
+            {/* The current step's image */}
+            <Image source={walkthroughData[step - 1].image} style={styles.image} />
+            {/* The current step's title and description */}
+            <Text style={styles.title}>{walkthroughData[step - 1].title}</Text>
+            <Text style={styles.description}>{walkthroughData[step - 1].description}</Text>
+            {/* The navigation buttons */}
+            <Button
+                title="Login"
+                onPress={() => navigation.navigate('Login')}
+            />
+            <View style={styles.buttons}>
+                {/* The back button */}
+                {step > 1 && (
+                    <TouchableOpacity style={styles.button} onPress={handleBack}>
+                        <Text style={styles.buttonText}>Back</Text>
+                    </TouchableOpacity>
+                )}
+                {/* The next/finish button */}
+                <TouchableOpacity style={styles.button} onPress={handleNext}>
+                    <Text style={styles.buttonText}>
+                        {step === totalSteps ? 'Finish' : 'Next'}
+                    </Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    );
+
+};
+
+const styles = StyleSheet.create({
+    image: {
+        width: '100%',
+        height: 300,
+        resizeMode: 'cover',
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 10,
+    },
+    description: {
+        fontSize: 16,
+        marginBottom: 20,
+    },
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 150
+    },
+    button: {
+        backgroundColor: '#1e90ff',
+        padding: 10,
+        borderRadius: 5,
+        width: 100,
+    },
+    buttonText: {
+        color: '#fff',
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+});
+
+
+
+export default WalkthroughScreen;
