@@ -57,7 +57,7 @@ const HomeScreen = () => {
           <Tile onPress={goPaymentScreen} text="Payment" iconName="card-outline" />
           <Tile onPress={goLeaderBoardScreen} text="Leaderboard" iconName="trophy-outline" />
           <Tile onPress={goLeaderBoardScreen} text="Maps" iconName="map-outline" />
-          <Tile onPress={goMapScreen} text="Logout" iconName="log-in-outline" />
+          <Tile onPress={goLoginScree} text="Logout" iconName="log-in-outline" />
         </View>
       </Layout>
   );

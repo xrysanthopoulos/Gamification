@@ -7,14 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import LoginScreen from './screens/LoginScreen';
 import WalkthroughScreen from "./screens/WalkthroughScreen";
-import Leaderboard from './screens/LeadeBoardScreen';
-import PaymentScreen from './screens/PaymentScreen'
 
-import MapScreen from "./screens/MapScreen";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
-const Tab = createBottomTabNavigator();
 import MapScreen from "./screens/MapScreen";
 import Leaderboard from "./screens/LeadeBoardScreen";
 import PaymentScreen from "./screens/PaymentScreen";
@@ -25,11 +18,6 @@ const Stack = createStackNavigator();
 const App = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: true }}>
-            {/*<Tab.Navigator initialRouteName="WalkthroughScreen">*/}
-            {/*    <Tab.Screen name="Login" component={LoginScreen} />*/}
-            {/*    <Tab.Screen name="Profile" component={ProfileScreen} />*/}
-            {/*</Tab.Navigator>*/}
             <Stack.Navigator initialRouteName="WalkthroughScreen" screenOptions={{ headerShown: true }}>
                 <Stack.Screen
                     options={{
@@ -109,11 +97,6 @@ const App = () => {
 
 
 
-                    }}}
-                    name="LeaderBoard" component={Leaderboard}/>
-
-
-
                 <Stack.Screen
                     options={{
                         cardStyle: {
@@ -123,25 +106,8 @@ const App = () => {
                             backgroundColor: '#30d2e7'
                         }}}
                     name="Login" component={LoginScreen}/>
-
-
-
-
-                    <Stack.Screen
-                        options={{
-                        cardStyle: {
-                            backgroundColor: 'white'
-                        },
-                        headerStyle: {
-                            backgroundColor: '#30d2e7'
-                        }}}
-                    name="Payment" component={PaymentScreen}/>
-
-
             </Stack.Navigator>
         </NavigationContainer>
-
-
     );
 };
 

@@ -97,20 +97,15 @@ const styles = StyleSheet.create({
       height: 60,
       marginHorizontal: 10,
     },
-    header: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: 20,
-      backgroundColor: '#0077c2',
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-    badge: {
-        width: 60,
-        height: 60,
-        marginHorizontal: 10,
-    },
+    // header: {
+    //   flexDirection: 'row',
+    //   justifyContent: 'space-between',
+    //   alignItems: 'center',
+    //   padding: 20,
+    //   // backgroundColor: '#0077c2',
+    //     flex: 1,
+    //     backgroundColor: '#fff',
+    // },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -155,14 +150,6 @@ const styles = StyleSheet.create({
             marginTop: 10,
             marginBottom: 5,
         },
-
-        achievementsHeader: {
-            fontSize: 18,
-            fontWeight: 'bold',
-            marginTop: 20,
-            marginBottom: 10,
-        },
-
         achievementsHeader: {
             fontSize: 18,
             fontWeight: 'bold',
@@ -202,7 +189,7 @@ const styles = StyleSheet.create({
             borderColor: '#ccc',
             borderRadius: 5,
             backgroundColor: '#eedd82 ',
-            borderColor: '#000',
+            // borderColor: '#000',
             padding: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
