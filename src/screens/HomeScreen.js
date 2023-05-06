@@ -4,10 +4,8 @@ import Layout from '../Layout';
 import { useNavigation } from '@react-navigation/native';
 
 
-
 const HomeScreen = () => {
     const navigation = useNavigation();
-
 
     function goProfileScreen() {
         navigation.navigate('Profile');
@@ -18,7 +16,7 @@ const HomeScreen = () => {
             <View style={styles.container}>
                 <Text style={styles.text}>Welcome to my app!</Text>
                 <Button
-                    title="Go to Details"
+                    title="My Profile"
                     onPress={() => goProfileScreen()}
                 />
 
@@ -32,6 +30,7 @@ const HomeScreen = () => {
                     onPress={() => navigation.navigate('Map')}
                 />
 
+
             </View>
         </Layout>
     );
@@ -43,6 +42,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    button: {
+        backgroundColor: '#e7305b',
+        padding: 16,
+        borderRadius: 8,
+      },
     text: {
         fontSize: 24,
         fontWeight: 'bold',
