@@ -69,10 +69,34 @@ const App = () => {
                             )
                         }}
                     />
+
+                    <Stack.Screen
+                        name="Profile"
+                        component={ProfileScreen}
+                        options={{
+                            cardStyle: {
+                            backgroundColor: 'white'
+                            },
+                            headerStyle: {
+                            backgroundColor: '#30d2e7'
+                            },
+                            headerRight: () => (
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('MAPS_PAGE')}
+                                style={{
+                                    marginRight: 15
+                                  }}
+
+                            >
+                                <Ionicons name="map-outline" size={24} color="white" />
+                            </TouchableOpacity>
+                            )
+                        }}
+                    />
                 <Stack.Screen
                     options={{ title: 'Welcome',
                         headerStyle: {
-                        backgroundColor: '#e7305b'
+                        backgroundColor: '#30d2e7'
                     }}}
                     name="Home" component={HomeScreen}/>
 
@@ -80,6 +104,11 @@ const App = () => {
                     options={{ title: 'Leader Board',
                         headerStyle: {
                         backgroundColor: '#30d2e7'
+                    }}}
+                    name="LeaderBoard" component={Leaderboard}/>
+
+
+
                     }}}
                     name="LeaderBoard" component={Leaderboard}/>
 
